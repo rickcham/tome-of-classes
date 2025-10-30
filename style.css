@@ -1,0 +1,59 @@
+*{
+    color: white;
+}
+
+body{
+    background-image: linear-gradient(rgb(56, 56, 56), rgb(5, 5, 5));
+}
+
+h1{
+ color: white;
+    font-size: 50px;
+    margin: 30px;
+    border-bottom: solid #33002c 4px ;
+    margin-bottom: 10vw;
+}
+
+
+div{
+    width: 80vw;
+background-color: rgb(0, 0, 0);
+margin: auto;
+border: solid white 1px;
+border-radius: 10px;
+}
+
+
+
+table {
+  width: 60vw;
+  height: 40px;
+  margin-left: 15px;
+  line-height: 1.42857;
+  border: grey solid 1px;
+      text-align: left;
+}
+
+
+
+th{
+    border: solid white 1px;
+}
+
+h3{
+    margin-left: 10px;
+}
+
+p{
+    margin-left: 20px;
+}
+
+li{
+    margin: 20px;
+}
+
+
+
+
+
+

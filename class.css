@@ -1,0 +1,14 @@
+.descrição{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    margin: 20px;
+    width: 60vw;
+      font-size: 15px;
+      height: auto;
+}
+
+.nome{
+      background-color: #33002c;
+  padding: 8px;
+  text-align: left;
+}
