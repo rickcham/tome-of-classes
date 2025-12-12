@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style> body{ 
+      background-color: black
+    }
+      h1{
+ color: white;
+    font-size: 50px;
+    margin: 30px;
+    border-bottom: solid #33002c 4px ;
+    margin-bottom: 10vw;
+    text-align: center;
+}
+
+textarea{
+  width: 12vw;
+  height: 2vw;
+  resize: none;
+}
+
+ input, textarea {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-bottom: 15px;
+    color: black;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74,144,226,0.4);
+  }
+
+
+
+      *{color: white;}
+      button, input{color: black;}
+      
+button{
+     background: #4a90e2;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover {
+    background: #357ABD;
+    transform: translateY(-2px);}
+
+      p{
+        text-align: center;
+      }
+
+      #deck p {
+  background: #111;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 6px;
+  font-size: 18px;
+}
+
+.container{
+  width: 80vw;
+  background-color: #0a0a0a;
+  margin: auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+      #deck{
+        margin: auto;
+        display: flex;
+ border: solid #444 2px;
+ text-align: center;
+     width: 500px;
+flex-wrap: wrap;
+border-radius: 5px;
+      }
+
+      .poker{
+        width: 600px;
+        height: 300px;
+        margin: auto;
+        display: block;
+        border: #444 solid 5px;
+        border-radius: 10px;
+        filter: brightness(200%);
+      }
+
+      .Tutorial{
+        filter: opacity(30%);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      
+      </style>
+</head>
+<body>
+    <div class="container">
+
+
+<h1>Cartas</h1>
+<div style="    text-align: center;
+    margin: auto;">
+<textarea name="Mão atual"></textarea>
+<textarea name="Mão atual"></textarea>
+<textarea name="Mão atual"></textarea>
+<textarea name="Mão atual"></textarea>
+<textarea name="Mão atual"></textarea>
+</div>
+
+<main style="text-align: center; gap: 120px;">
+  
+    <input type="number" name="quantidade" id="quantia">
+    <button id="comprar">Comprar Cartas</button>
+    <button id="reset">Resetar</button>
+<div id="deck"></div>
+
+
+</main>
+
+
+<p class="Tutorial">Você define um número na caixa ao lado de comprar cartas e ou aperta o botão ou pressiona "Enter" para conseguir de forma aleatória a quantidade de cartas que você desejava comprar, você pode pressionar Reset para resetar todas as cartas de volta ao Deck, quando o combate acabar. Acima dessa funções, há caixas de texto onde você definirá sua combinação, te entregando a quantidade de pontos equivalentes para as características. </p>
+    <img src="poker.jpeg" class="poker" alt="">
+
+</div>
+</body>
+</html>
+
+<script>
+const comprar = document.getElementById("comprar");
+const reset = document.getElementById("reset");
+const deck = document.getElementById("deck");
+const quantiaInput = document.getElementById("quantia");
+const numero = ["A", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+const tipo = ["Copas ♥️", "Ouros ♦️", "Paus ♣️", "Espadas ♠️"];
+
+let deckCompleto = [];
+
+function criarDeck() {
+  deckCompleto = [];
+
+  for (let n of numero) {
+    for (let t of tipo) {
+      deckCompleto.push(`${n} de ${t}`);
+    }
+  }
+}
+
+function jogar() {
+  const quantia = Number(quantiaInput.value);
+
+  if (quantia < 1) return;
+
+  for (let i = 0; i < quantia; i++) {
+
+    if (deckCompleto.length === 0) {
+      alert("Pow, comprar mais cartas que o Deck tem aí é demais não?");
+      return;
+    }
+
+    let index = Math.floor(Math.random() * deckCompleto.length);
+
+    let carta = deckCompleto.splice(index, 1)[0];
+
+    let resultado = document.createElement("p");
+    resultado.textContent = carta;
+    deck.appendChild(resultado);
+  }
+}
+
+function limpar() {
+  deck.innerHTML = "";
+  quantiaInput.value = "";
+  criarDeck();
+}
+
+quantiaInput.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    jogar();
+  }
+});
+
+comprar.addEventListener("click", jogar);
+reset.addEventListener("click", limpar);
+criarDeck();
+</script>
