@@ -176,8 +176,12 @@ function jogar() {
 
     let resultado = document.createElement("p");
     resultado.textContent = carta;
+
+ resultado.addEventListener("click", function () {
+            resultado.remove();
+        });
     deck.appendChild(resultado);
-  }
+}
 }
 
 function limpar() {
