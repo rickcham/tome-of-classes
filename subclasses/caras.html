@@ -38,6 +38,26 @@ textarea{
     box-shadow: 0 0 5px rgba(74,144,226,0.4);
   }
 
+th{
+    border: solid white 1px;
+}
+
+
+table {
+    width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  height: auto;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin-left: 15px;
+  line-height: 1.42857;
+  border: grey solid;
+      text-align: left;
+        width: 95%;
+  margin: auto;
+  overflow-x: auto;
+}
 
 
       *{color: white;}
@@ -71,7 +91,9 @@ button:hover {
 }
 
 .container{
-  width: 80vw;
+  width: 95%;
+  margin: auto;
+  overflow-x: auto;
   background-color: #0a0a0a;
   margin: auto;
   border: 1px solid white;
@@ -90,8 +112,8 @@ border-radius: 5px;
       }
 
       .poker{
-        width: 70vw;
-        height: 35vw;
+        width: 30vw;
+        height: 15vw;
         margin: auto;
         display: block;
         border: #444 solid 5px;
@@ -103,7 +125,9 @@ border-radius: 5px;
         filter: opacity(30%);
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       }
-      
+
+
+
       </style>
 </head>
 <body>
@@ -124,8 +148,29 @@ border-radius: 5px;
 
 
 <p class="Tutorial">Você define um número na caixa ao lado de comprar cartas e ou aperta o botão ou pressiona "Enter" para conseguir de forma aleatória a quantidade de cartas que você desejava comprar, você pode pressionar Reset para resetar todas as cartas de volta ao Deck, quando o combate acabar. Acima dessa funções, há caixas de texto onde você definirá sua combinação, te entregando a quantidade de pontos equivalentes para as características. </p>
-    <img src="poker.jpeg" class="poker" alt="">
+    <div style="display: flex ; max-width: 80vw; break-after: column;"></div>
+<table style="margin: auto;">
+ <tr>
+<th>Royal Flush: 10</th>
+<th>Straight Flush: 8</th>
+<th>Four of a Kind: 7</th>
+<th>Full House: 4</th>
+<th>Flush: 4</th>
+<th>Straight: 4</th>
+<th>Three of a Kind: 3</th>
+<th>Two Pair: 2</th>
+<th>Pair: 2</th>
+<th>High Card: 1</th>
+ </tr>
+ <tr>
+<th>1-10: 1</th>
+<th>J,K,Q: 2</th>
+<th>A: 3</th>
+ </tr>
+</table>
 
+<img src="poker.jpeg" class="poker" alt="">
+</div>
 </div>
 </body>
 </html>
